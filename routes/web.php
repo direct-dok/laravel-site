@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Admin\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,5 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
-    Route::get('/', 'MainController@index')->name('admin.index');
+    Route::get('/', [MainController::class, 'index'])->name('admin.index');
 });
